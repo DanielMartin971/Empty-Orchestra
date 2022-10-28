@@ -8,7 +8,12 @@ fetch('https://api.seatgeek.com/2/events?client_id=Mjk5MjEzNTl8MTY2NjY2NTg0MC45N
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
+const burgerIcon = document.querySelector('#burger');
+const navbarMenu = document.querySelector('#nav-links')
 
+burgerIcon.addEventListener('click', () =>{
+	navbarMenu.classList.toggle('is-active')
+})
 
 
 
