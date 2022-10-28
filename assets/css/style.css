@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'metal_vengeanceitalic';
+    src: url('../Fonts/Rock-metal2.ttf') format('woff2'),
+         url('../Fonts/Rock-metal2.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*
 #036396
 #24B2FF
 #0997E3
 #965500
-#E38409
+#E38409git
 */
 
 * {
@@ -17,11 +26,18 @@
 }
 
 .navbar h2{
-    margin-left: 50%;
+    margin-left: 45%;
     font-size: 50px;
+    font-family: 'metal_vengeanceitalic';
     font-weight: 500;
     text-decoration: underline;
     text-shadow: 1px 1px 1px black;
+}
+
+.navbar-item {
+    font-family: 'metal_vengeanceitalic';
+    text-shadow: 1px 1px 1px black;
+
 }
 
 .concert-slide {
