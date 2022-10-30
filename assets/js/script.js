@@ -43,14 +43,18 @@ fetch(seatGeekUrl)
 		console.log(topEventTitle);
 		let venueNameForTopEvent = firstTenEvents[0].venue.name;
 		console.log(venueNameForTopEvent)
+		let topEventLocation = firstTenEvents[0].venue.display_location;
+		console.log(topEventLocation)
 		let topEventEl = document.querySelector('#topEvent');
 		let topEventBandEl = document.querySelector('#topEventBand');
+		let topEventLoc = document.querySelector('#topEventLoc');
 		console.log(topEventEl);
 		console.dir(topEventEl);
 
 
 		topEventEl.innerHTML = concerts[0].title;
 		topEventBandEl.innerHTML = concerts[0].performers[0].name;
+		topEventLoc.innerHTML = concerts[0].venue.display_location;
 	})
 	.catch(err => console.error('err'))
 

@@ -102,3 +102,9 @@
   .caption-container {
     color: white;
   }
+
+.topEventContainer {
+    border-style: double;
+    border: 5px solid blue;
+    background-color: lightgrey;
+}
