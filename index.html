@@ -4,31 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico'/>
     <title>Rock On!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
+    <script src="https://kit.fontawesome.com/29305cce74.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
   </head>
-  <header>
-    <nav class="navbar is-primary">
-      <div class="navbar-brand">
-        <a href="./index.html" class="navbar-item">
-          <img src="./assets/images/402-4025069_oneokrock-logo-calavera-esopo-one-ok-rock-japan.png" alt="site logo" style="max-height: 50px">
-        </a>
-      </div>
-      <div class="navbar-menu" id="links">
-        <h2>Rock On</h2>
-        <div class="navbar-end">
-          <a href="#" class="navbar-item">Home</a>
-          <a href="#" class="navbar-item">New Arrivals</a>
-          <a href="#" class="navbar-item">Merch</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
+  
   <body>
+    <header>
+  
+      <nav class="navbar is-primary">
+        <div class="navbar-brand">
+          <a href="./index.html" class="navbar-item">
+            <img src="./assets/images/402-4025069_oneokrock-logo-calavera-esopo-one-ok-rock-japan.png" alt="site logo" style="max-height: 50px">
+          </a>
+        </div>
+  
+        <h2 id="site-name">Rock On</h2>
+        <a class="navbar-burger" id="burger">
+          <span></span>
+          <span></span>
+        </a>
+        <div class="navbar-menu" id="links">
+          <div class="navbar-end" id="nav-links">
+            <a href="#" class="navbar-item">Home</a>
+            <a href="#" class="navbar-item">New Arrivals</a>
+          </div>
+          <div class="field has-addons">
+          <div class="control">
+            <input id="input" class="input" type="text" placeholder="Find a Band">
+          </div>
+  
+          <div class="control">
+            <button id="btnSearch" class="button is-dark">
+              Search
+            </button>
+          </div>
+        </div>
+  
+      </nav>
+  
+    </header>
+
     <section>
         <div id="slider">
             <div class="card">
@@ -37,20 +56,22 @@
                         <img src="./assets/images/51bc0996c7a74ff83b9b2dfc24a45b7f.jpg" alt="" />
                     </figure>
                 </div>
+
                 <div class="card-content slider-text ">
                     <div class="is-size-5 box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cum blanditiis dolore
-                          aperiam reiciendis minima doloremque recusandae atque illum. Dolorum impedit aut facere,
-                          porro minus quia dignissimos minima. Iure, magni?</p>
+                        <p>SEARCH FOR A FESTIVAL OR YOUR FAVORITE BAND TO SEE WHERE THEYRE PLAYING AT NEXT!!!</p>
                     </div>
                 </div>
+
             </div>
+
             <div class="card ">
                 <div class="card-image">
                     <figure class="image is-16by9 is-covered">
                         <img src="./assets/images/maxresdefault.jpg" alt="" />
                     </figure>
                 </div>
+
                 <div class="card-content slider-text ">
                     <p class="is-size-5 box">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facere inventore voluptate
@@ -58,13 +79,16 @@
                         vero repellat earum commodi quaerat qui excepturi.
                     </p>
                 </div>
+
             </div>
+
             <div class="card ">
                 <div class="card-image">
                     <p class="image is-16by9 is-covered">
                         <img src="./assets/images/Louis_Tomlinson_World_Tour_2022.jpg" alt="" />
                     </p>
                 </div>
+
                 <div class="card-content slider-text ">
                     <p class=" is-size-5 box">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam magni sint exercitationem
@@ -72,10 +96,20 @@
                         deserunt tenetur nemo assumenda asperiores?
                     </p>
                 </div>
-            </div>
-            
+
+            </div> 
+
     </section>
-    <script src="script.js"></script>
+
+    <section>
+
+      
+    <h2 id="topEvent"> Top Event </h2>
+    <h3 id="topEventBand">dethklok</h3>
+    <p> performing at <span> the universe hall</span></p>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
     <script>
         bulmaCarousel.attach('#slider', {
@@ -86,13 +120,5 @@
         });
     </script>
 </body>
-
-
-  
-
-
-  <footer>
-
-  </footer>
 
 </html>
