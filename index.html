@@ -20,16 +20,24 @@
         </a>
       </div>
 
-      <h2 id="site-name">Rock On</h2>
-      <a class="navbar-burger" id="burger">
-        <span></span>
-        <span></span>
-      </a>
       <div class="navbar-menu" id="links">
-        <div class="navbar-end" id="nav-links">
+        <div class="navbar-start" id="nav-links">
           <a href="#" class="navbar-item">Home</a>
           <a href="#" class="navbar-item">New Arrivals</a>
+          <a href="#" class="navbar-item">Events</a>
         </div>
+      </div>
+      <h2 id="site-name">Rock On</h2>
+
+
+      <div class="control">
+        <input id="input" class="input" type="text" placeholder="Find a Band">
+      </div>
+
+      <div class="control">
+        <button id="btnSearch" class="button is-dark">
+          Search
+        </button>
       </div>
 
     </nav>
@@ -49,9 +57,7 @@
 
                 <div class="card-content slider-text ">
                     <div class="is-size-5 box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cum blanditiis dolore
-                          aperiam reiciendis minima doloremque recusandae atque illum. Dolorum impedit aut facere,
-                          porro minus quia dignissimos minima. Iure, magni?</p>
+                      
                     </div>
                 </div>
 
@@ -65,11 +71,7 @@
                 </div>
 
                 <div class="card-content slider-text ">
-                    <p class="is-size-5 box">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facere inventore voluptate
-                        ad, ipsam, esse asperiores distinctio ipsum reprehenderit nostrum veniam debitis perferendis
-                        vero repellat earum commodi quaerat qui excepturi.
-                    </p>
+                   
                 </div>
 
             </div>
@@ -82,33 +84,44 @@
                 </div>
 
                 <div class="card-content slider-text ">
-                    <p class=" is-size-5 box">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam magni sint exercitationem
-                        libero nesciunt quo saepe, voluptates eaque. Iure itaque quam facere sit praesentium minus
-                        deserunt tenetur nemo assumenda asperiores?
-                    </p>
+                   
                 </div>
 
             </div> 
 
     </section>
 
-    <section>
 
-      <div class="field has-addons">
-        <div class="control">
-          <input class="input" type="text" placeholder="Find a repository">
-        </div>
-
-        <div class="control">
-          <a class="button is-info">
-            Search
-          </a>
-        </div>
-        
+    <section id="new-arrivals">
+      <div id="arrivals-title">
+      <h2>New Arrivals</h2>
       </div>
+      <div id="system-container">
+     <img src="./assets/images/system of a down.jpg" width="700px" height="500px" alt="" />
+     <p>System of A Down new Rockfest tour 2022 coming soon! For more information, <a id="system" href=""> click here! </a></p>
+      </div>
+      <div id="lupe-container">
+     <img src="./assets/images/Lupe.jpg" width="700px" height="500px" alt="" />
+     <p>Chicago's best MC on LAZERS tour coming soon. For more information, <a id="lupe" href=""> click here! </a></p>
+      </div>
+    
 
     </section>
+
+    <section id="events">
+      <div id="events-title">
+        <h2><a href="https://www.evo.gg/">Evo</a> in Las Vagas!</h2>
+        <h2><a href="https://www.anime-expo.org/">Anime Expo</a> in Los Angeles Convention Center!</h2>
+      </div>
+    </section>
+
+ <section class="topEventContainer">
+
+      <h1>Top Event</h1>
+      <h2 id="topEvent"> Top Event </h2>
+      <h3 id="topEventBand">dethklok</h3>
+      <p> performing in <span id="topEventLoc"> the universe hall</span></p>
+      </section>
 
     <script src="./assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>

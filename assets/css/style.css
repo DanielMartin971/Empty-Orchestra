@@ -20,14 +20,13 @@
     padding: 0;
 }
 
-
 .navbar{
     position: fixed;
     width: 100%;
 }
 
 .navbar h2{
-    margin-left: 45%;
+    margin-right: 30%;
     font-size: 50px;
     font-family: 'metal_vengeanceitalic';
     font-weight: 500;
@@ -98,3 +97,18 @@
   .caption-container {
     color: white;
   }
+
+  .topEventContainer {
+    border-style: double;
+    border: 5px solid blue;
+    background-color: lightgrey;
+}
+
+h2 {
+    font-family: 'metal_vengeanceitalic'; 
+    font-size: 25px;
+}
+
+p {
+    font-family: 'metal_vengeanceitalic'; 
+}
