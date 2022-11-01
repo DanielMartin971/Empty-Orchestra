@@ -12,117 +12,77 @@
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <header>
-
     <nav class="navbar is-primary">
-      <div class="navbar-brand">
-        <a href="./index.html" class="navbar-item">
-          <img src="./assets/images/402-4025069_oneokrock-logo-calavera-esopo-one-ok-rock-japan.png" alt="site logo" style="max-height: 50px">
-        </a>
-      </div>
-
       <div class="navbar-menu" id="links">
         <div class="navbar-start" id="nav-links">
-          <a href="#" class="navbar-item">Home</a>
-          <a href="#" class="navbar-item">New Arrivals</a>
-          <a href="#" class="navbar-item">Events</a>
+          <a href="#slider" class="navbar-item">Events</a>
+          <a href="#starting-tour" class="navbar-item">Touring Soon</a>
+          <a href="sport-events" class="navbar-item">Sports</a>
         </div>
       </div>
       <h2 id="site-name">Rock On</h2>
-
-
       <div class="control">
         <input id="input" class="input" type="text" placeholder="Find a Band">
       </div>
-
       <div class="control">
         <button id="btnSearch" class="button is-dark">
           Search
         </button>
       </div>
-
     </nav>
-
   </header>
-
   <body>
-
-    <section>
+    <section class="section">
         <div id="slider">
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-16x9 is-covered">
-                        <img src="./assets/images/51bc0996c7a74ff83b9b2dfc24a45b7f.jpg" alt="" />
+                       <a href="https://lasvegas.electricdaisycarnival.com" target="_blank"><img src="./assets/images/edcLV.jpg" alt="clickable poster for EDC"/></a>
                     </figure>
                 </div>
-
-                <div class="card-content slider-text ">
-                    <div class="is-size-5 box">
-                      
-                    </div>
-                </div>
-
             </div>
-
             <div class="card ">
                 <div class="card-image">
                     <figure class="image is-16by9 is-covered">
-                        <img src="./assets/images/maxresdefault.jpg" alt="" />
+                        <a href='https://www.coachella.com' target="_blank"><img src="./assets/images/coachella-2022-logo-1480x832-1.jpg" alt="clickable poster for Coachella"/></a>
                     </figure>
                 </div>
-
-                <div class="card-content slider-text ">
-                   
-                </div>
-
             </div>
-
             <div class="card ">
                 <div class="card-image">
-                    <p class="image is-16by9 is-covered">
-                        <img src="./assets/images/Louis_Tomlinson_World_Tour_2022.jpg" alt="" />
-                    </p>
+                    <figure class="image is-16by9 is-covered">
+                        <a href='https://electricforestfestival.com' target="_blank"><img src="./assets/images/eletric forest.jpg" alt="clickable poster for Electric Forest" /></a>
+                    </figure>
                 </div>
-
-                <div class="card-content slider-text ">
-                   
-                </div>
-
-            </div> 
-
+            </div>
+        </div> 
     </section>
-
-
-    <section id="new-arrivals">
-      <div id="arrivals-title">
-      <h2>New Arrivals</h2>
-      </div>
-      <div id="system-container">
-     <img src="./assets/images/system of a down.jpg" width="700px" height="500px" alt="" />
-     <p>System of A Down new Rockfest tour 2022 coming soon! For more information, <a id="system" href=""> click here! </a></p>
-      </div>
-      <div id="lupe-container">
-     <img src="./assets/images/Lupe.jpg" width="700px" height="500px" alt="" />
-     <p>Chicago's best MC on LAZERS tour coming soon. For more information, <a id="lupe" href=""> click here! </a></p>
-      </div>
-    
-
-    </section>
-
-    <section id="events">
-      <div id="events-title">
-        <h2><a href="https://www.evo.gg/">Evo</a> in Las Vagas!</h2>
-        <h2><a href="https://www.anime-expo.org/">Anime Expo</a> in Los Angeles Convention Center!</h2>
+    <section class='section' id="starting-tour">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-3">
+           <img src="./assets/images/Lupe.jpg" alt="rapper">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nihil doloribus mollitia ipsum excepturi, consectetur sequi repellendus dolorum provident saepe quia dolore quasi adipisci, debitis labore magni rerum, est veritatis.</p>
+          </div>
+        <div class="column is-1"></div>
+          <div class="column is-3">
+           <img src="./assets/images/Lupe.jpg" alt="rapper">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nihil doloribus mollitia ipsum excepturi, consectetur sequi repellendus dolorum provident saepe quia dolore quasi adipisci, debitis labore magni rerum, est veritatis.</p>
+          </div>
+        <div class="column is-1"></div>
+          <div class="column is-3">
+           <img src="./assets/images/Lupe.jpg" alt="rapper">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nihil doloribus mollitia ipsum excepturi, consectetur sequi repellendus dolorum provident saepe quia dolore quasi adipisci, debitis labore magni rerum, est veritatis.</p>
+          </div>
+        </div>
       </div>
     </section>
-
- <section class="topEventContainer">
-
+    <section class="section" id="sports-events">
       <h1>Top Event</h1>
       <h2 id="topEvent"> Top Event </h2>
       <h3 id="topEventBand">dethklok</h3>
       <p> performing in <span id="topEventLoc"> the universe hall</span></p>
-      </section>
-
+    </section>
     <script src="./assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
     <script>
@@ -134,13 +94,6 @@
         });
     </script>
 </body>
-
-
-  
-
-
   <footer>
-
   </footer>
-
 </html>

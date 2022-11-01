@@ -40,12 +40,12 @@
 
 }
 
-.concert-slide {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
 
+nav div .control{
+    display: flex;
+    position: absolute;
+    margin-top: 10px;
+}
 #slider .card-content {
     max-width: 50%;
 }
