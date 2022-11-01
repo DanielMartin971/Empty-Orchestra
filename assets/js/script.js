@@ -2,10 +2,6 @@
 var searchInput = document.getElementById("btnSearch")
 var textInput   = document.getElementById("input")
 
-function searchInput() {
-
-}
-
 //Client ID: Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE
 //Secret: e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42
 // function searchInput() {
@@ -53,10 +49,10 @@ fetch(seatGeekUrl)
 const burgerIcon = document.querySelector('#burger');
 const navbarMenu = document.querySelector('#nav-links')
 
-burgerIcon.addEventListener('click', () => {
-    navbarMenu.classList.toggle('is-active')
-    console.log(data);
-})
+// burgerIcon.addEventListener('click', () => {
+//     navbarMenu.classList.toggle('is-active')
+//     console.log(data);
+// })
 
 
 
@@ -89,10 +85,25 @@ function showSlides(n) {
     }
 
 }
-btnSearch.addEventListener("click", () => {
-    var userInput = inputValue.val().trim();
+
+btnSearch.addEventListener("click", (e) => {
+    var search    = textInput.value.trim();
+    var userInput = search;
+
+    e.preventDefault();
 
     if (userInput !== "") {
         getTickets(searchInput.value);
     }
 })
+
+var testing = 'https://app.ticketmaster.com/discovery/v2/venues.json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB';
+//https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB
+//https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB
+
+fetch(testing)
+    .then(response => {
+        console.log('ticketmaster',response);
+        return response.json()
+    })
+    .then(data => {console.log(data)})
