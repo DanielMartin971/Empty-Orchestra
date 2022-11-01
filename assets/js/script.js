@@ -2,9 +2,62 @@
 var searchInput = document.getElementById("btnSearch")
 var textInput   = document.getElementById("input")
 
+// function searchInput() {
+
+// }
+// Consumer Key    emwInIksrqTSCb37BcVP8fFHMhvD4RlB
+// Consumer Secret    ykku1hQvJW1A1ivu
+// [6:49 PM]
+// ticketmaster key
+// [6:52 PM]
+// https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB
+
 //Client ID: Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE
 //Secret: e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42
 // function searchInput() {
+
+	function getEvents(searchInput) {
+	
+		fetch ("https://app.ticketmaster.com/discovery/v2/events.json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB&size=10&classificationName=music&keyword="+searchInput)
+		 .then(function(responseData) {
+			return responseData.json()
+
+		 })
+		 .then(function(dataResponse){
+			console.log(dataResponse)
+		 })
+		}
+		
+		
+		 
+	  
+
+function showEvents(json) {
+		var items = $('#events .list-group-item');
+		items.hide();
+		var events = json._embedded.events;
+		var item = items.first();
+		for (var i=0;i<events.length;i++) {
+		  item.children('.list-group-item-heading').text(events[i].name);
+		  item.children('.list-group-item-text').text(events[i].dates.start.localDate);
+		  try {
+			item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
+		  } catch (err) {
+			console.log(err);
+		  }
+		  item.show();
+		  item.off("click");
+		  item.click(events[i], function(eventObject) {
+			console.log(eventObject.data);
+			try {
+			  getAttraction(eventObject.data._embedded.attractions[0].id);
+			} catch (err) {
+			console.log(err);
+			}
+		  });
+		  item=item.next();
+		}
+	  }
 
 let seatGeekUrl = 'https://api.seatgeek.com/2/events?client_id=Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE&client_secret=e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42';
 
@@ -44,7 +97,7 @@ fetch(seatGeekUrl)
         topEventBandEl.innerHTML = concerts[0].performers[0].name;
         topEventLoc.innerHTML    = concerts[0].venue.display_location;
     })
-    .catch(err => console.error('err'))
+    // .catch(err => console.error('err'))
 
 const burgerIcon = document.querySelector('#burger');
 const navbarMenu = document.querySelector('#nav-links')
@@ -85,25 +138,15 @@ function showSlides(n) {
     }
 
 }
-
 btnSearch.addEventListener("click", (e) => {
     var search    = textInput.value.trim();
-    var userInput = search;
+    // var userInput = search;
 
     e.preventDefault();
+	console.log(search)
 
-    if (userInput !== "") {
-        getTickets(searchInput.value);
+    if (search !== "") {
+        getEvents(search);
     }
+
 })
-
-var testing = 'https://app.ticketmaster.com/discovery/v2/venues.json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB';
-//https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB
-//https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB
-
-fetch(testing)
-    .then(response => {
-        console.log('ticketmaster',response);
-        return response.json()
-    })
-    .then(data => {console.log(data)})
