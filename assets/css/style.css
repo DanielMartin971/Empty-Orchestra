@@ -178,6 +178,7 @@ p {
 img {
     height: 250px;
     width: 400px;
+    border: 5px solid black;
 }
 
 footer {
