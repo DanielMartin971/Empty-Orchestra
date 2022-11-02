@@ -27,7 +27,7 @@ function getEvents(searchInput) {
 			console.log(dataResponse);
             console.log(dataResponse._embedded.events[0].id);
             getImgs(dataResponse._embedded.events[0].id);
-            getDetails(dataResponse._embedded.events[0].id, dataResponse._embedded.events[1].id, dataResponse._embedded.events[2].id);
+            getDetails(dataResponse._embedded.events[0].id, dataResponse._embedded.events[2].id, dataResponse._embedded.events[4].id);
 		})
 }
 
@@ -54,14 +54,17 @@ function getDetails(deets1,deets2,deets3){
     var details2 = document.getElementById('details-2');
     var details3 = document.getElementById('details-3');
 
+    var link1 = document.getElementById('link-1');
+    var link2 = document.getElementById('link-2');
+    var link3 = document.getElementById('link-3');
+
     fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets1+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
         .then(function(response){
             return response.json();
         })
         .then(function(data){
-            console.log(data);
-            console.log(data.name,data.products[0].name)
-
+            console.log('data1',data)
+            link1.href = data.url;
             details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
         })
 
@@ -70,6 +73,8 @@ function getDetails(deets1,deets2,deets3){
             return response.json();
         })
         .then(function(data){
+            console.log('data2',data)
+            link2.href = data.url;
             details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
         })
 
@@ -78,9 +83,12 @@ function getDetails(deets1,deets2,deets3){
             return response.json();
         })
         .then(function(data){
+            console.log('data3',data)
+            link3.href = data.url;
             details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
         })
 }
+
 		
 		
 		 
