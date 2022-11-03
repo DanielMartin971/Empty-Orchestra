@@ -26,9 +26,13 @@ function getEvents(searchInput) {
 		})
 		.then(function(dataResponse){
 			console.log(dataResponse);
-            console.log(dataResponse._embedded.events[0].id);
+            var id1 = dataResponse._embedded.events[0].id;
+            var id2 = dataResponse._embedded.events[1].id;
+            var id3 = dataResponse._embedded.events[2].id; 
+
             getImgs(dataResponse._embedded.events[0].id);
-            getDetails(dataResponse._embedded.events[0].id, dataResponse._embedded.events[2].id, dataResponse._embedded.events[4].id);
+            setTimeout(getDetails(id1,id2,id3),1000);
+            console.log(id1,id2,id3);
 		})
 }
 
@@ -61,37 +65,55 @@ function getDetails(deets1,deets2,deets3){
     var link2 = document.getElementById('link-2');
     var link3 = document.getElementById('link-3');
 
-    Promise.all([
+    // Promise.all([
         fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets1+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
             .then(function(response){
                 return response.json();
             })
             .then(function(data){
-                console.log('data1',data)
-                link1.href = data.url;
-                details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
-            }),
+                if(Object.keys(data).indexOf('products') === -1){
+                    console.log('there are no products');
+                    details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate;
+                }
+                else{
+                    console.log('data2',data);
+                    link1.href = data.url;
+                    details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+                }
 
-        fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets2+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
-            .then(function(response){
-                return response.json();
-            })
-            .then(function(data){
-                console.log('data2',data)
-                link2.href = data.url;
-                details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
-            }),
+                fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets2+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
+                    .then(function(response){
+                        return response.json();
+                    })
+                    .then(function(data){
+                        if(Object.keys(data).indexOf('products') === -1){
+                            console.log('there are no products');
+                            details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate;
+                        }
+                        else{
+                            console.log('data2',data);
+                            link2.href = data.url;
+                            details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+                        }
 
-        fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets3+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
-            .then(function(response){
-                return response.json();
+                        fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets3+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
+                            .then(function(response){
+                                return response.json();
+                            })
+                            .then(function(data){
+                                if(Object.keys(data).indexOf('products') === -1){
+                                    console.log('there are no products');
+                                    details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate;
+                                }
+                                else{
+                                    console.log('data2',data);
+                                    link3.href = data.url;
+                                    details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+                                }
+                            })
+                        })
             })
-            .then(function(data){
-                console.log('data3',data)
-                link3.href = data.url;
-                details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
-            })
-    ])
+    // ])
 }  
 
 let seatGeekUrl = 'https://api.seatgeek.com/2/events?client_id=Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE&client_secret=e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42';
