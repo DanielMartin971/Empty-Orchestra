@@ -22,29 +22,28 @@
   </head>
 
   <header>
-    <nav class="navbar">
+    <nav class="navbar is-primary">
       <div class="navbar-menu" id="links">
         <div class="navbar-start" id="nav-links">
           <a href="#slider" class="navbar-item">Events</a>
           <a href="#starting-tour" class="navbar-item">Touring Soon</a>
-          <a href="#sport-events" class="navbar-item">Sports</a>
         </div>
       </div>
 
       <h2 id="site-name">Rock On</h2>
 
       <div class="control">
-        <input id="input" class="input my-5" type="text" placeholder="Find a Band"/>
+        <input id="input" class="input" type="text" placeholder="Find a Band" />
       </div>
 
       <div class="control">
-        <button id="btnSearch" class="button my-5 ">Search</button>
+        <button id="btnSearch" class="button is-dark">Search</button>
       </div>
     </nav>
   </header>
 
   <body>
-    <section class="section slider">
+    <section class="section">
       <div id="slider">
         <div class="card">
           <div class="card-image">
@@ -52,7 +51,7 @@
               <a
                 href="https://lasvegas.electricdaisycarnival.com" 
                 target="_blank"
-                ><img class="slider-img"
+                ><img
                 src="./assets/images/edcLV.jpg"
                   alt="clickable poster for EDC"
               /></a>
@@ -64,7 +63,7 @@
           <div class="card-image">
             <figure class="image is-3by1 is is-covered">
               <a href="https://countdownnye.com/" target="_blank"
-                ><img class="slider-img"
+                ><img
                   src="./assets/images/Countdown New Years invasion.jpg"
                   alt="clickable poster for Countdown"
               /></a>
@@ -76,7 +75,7 @@
           <div class="card-image">
             <figure class="image is-3by1 is-covered">
               <a href="https://electricforestfestival.com" target="_blank"
-                ><img class="slider-img"
+                ><img
                   src="./assets/images/Electric forest 2022.jpg"
                   alt="clickable poster for Electric Forest"
               /></a>
@@ -89,88 +88,41 @@
     <section class="section" id="starting-tour">
       <div class="container">
         <div id="upcoming-concerts"><h1>Upcoming Concerts</h1></div>
-        <div class="columns is-variable is-3">
-          
-          <div class="column is-3 touring">
-              <div class="card">
-                <div class="card-image has-text-centered">
-                  <a id='link-1' href="https://smashingpumpkins.com/"><img id="img-1" src="./assets/images/The Smashing Pumpkins.jpg" alt="rock band" /></a>
-                  <p id="details-1" class="band-text has-text-centered card-content">
-                    The Smashing Pumpkins: Spirits on Fire Tour! Upcoming concert on November 16th, 2022 at the Honda Center in Anaheim, CA! 
-                  </p>
-                  </div>
-              </div>
-          </div>
- 
-          <div class="column is-1"></div>
-          
-          <div class="column is-3 touring">
-            <div class="card">
-              <div class="card-image has-text-centered">
-                <a id='link-2' href="https://www.adele.com/"><img id="img-2" src="./assets/images/Adele Performing.jpg" alt="Adele singing" /></a>
-                <p id="details-2" class="band-text has-text-centered card-content">
-                  Adele: Weekends With Adele! Upcoming concert on November 18th, 2022 at The Colosseum at Ceasers Palace in Las Vegas, NV! 
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="column is-1"></div>
-            
-            
-          <div class="column is-3 touring">
-            <div class="card">
-              <div class="card-image has-text-centered">
-                <a id='link-3' href="https://www.paramore.net/"><img id="img-3" src="./assets/images/Paramore.jpg" alt="rock band" /></a>
-                <p id="details-3" class="band-text has-text-centered card-content">
-                  Paramore: Fall 2022 Tour! Upcoming concert on November 9th, 2022 at The Chicago Theater in Chicago, IL!
-                </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section class="section" id="sports-events">
-        
-        <h1>Sports</h1>
-        
         <div class="columns">
-        
-          <div class="column is-3"></div>
-          
-          <div class="column is-6">
-            <h2 class="bd-notification is-info">HeadLiner</h2>
-            <img src="./assets/images/super-bowl.jpg" alt="" class="sports-img head-img">
-            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, laboriosam. Minus, fuga.</h4>
-            
-          <div class="column is-3"></div>
-          
-          <div class="columns is-mobile">
-            
-            <div class="column is-1"></div>
-            
-            <div class="column is-4">
-              <h3 class="bd-notification is-info">Football</h3>
-              <img src="./assets/images/baketball-game.jpg" alt="" class="sports-img">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-            </div>
-            
-            <div class="column is-3"></div>
-
-            <div class="column is-4">
-              <h3 class="bd-notification is-info">MMA</h3>
-              <img src="./assets/images/mcgregor weight in.jpg" alt="" class="sports-img">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-            </div>
-            
-            <div class="column is-1"></div>
-            
+          <div class="column is-3">
+            <a id="link-1" href="https://smashingpumpkins.com/">
+            <img id="img-1" src="./assets/images/The Smashing Pumpkins.jpg" alt="rock band" /></a>
+            <p id="details-1">
+              The Smashing Pumpkins: Spirits on Fire Tour! Upcoming concert on November 16th, 2022 at the Honda Center in Anaheim, CA! 
+            </p>
           </div>
-        
-        </div>
+          <div class="column is-1"></div>
 
+          <div class="column is-3">
+            <a id="link-2" href="https://www.adele.com/">
+            <img id="img-2" src="./assets/images/Adele Performing.jpg" alt="Adele singing" /></a>
+            <p id="details-2">
+             Adele: Weekends With Adele! Upcoming concert on November 18th, 2022 at The Colosseum at Ceasers Palace in Las Vegas, NV! 
+            </p>
+          </div>
+
+          <div class="column is-1"></div>
+
+          <div class="column is-3">
+            <a id="link-3" href="https://www.paramore.net/">
+            <img id="img-3" src="./assets/images/Paramore.jpg" alt="rock band" /></a>
+            <p id="details-3">
+              Paramore: Fall 2022 Tour! Upcoming concert on November 9th, 2022 at The Chicago Theater in Chicago, IL!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sports-events">
+      <h2 id="topEvent">Top Event</h2>
+      <h3 id="topEventBand">dethklok</h3>
+      <p>performing in <span id="topEventLoc"> the universe hall</span></p>
     </section>
 
     <script src="./assets/js/script.js"></script>
