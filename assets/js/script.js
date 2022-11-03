@@ -16,6 +16,11 @@ var textInput   = document.getElementById("input")
 //Secret: e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42
 // function searchInput() {
 
+<<<<<<< HEAD
+=======
+//When this function is called it grabs the events then calls the other functions giving them the IDs for the API and making it
+//easier to search for events and grab details and imgs
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 function getEvents(searchInput) {
 	
 	fetch ("https://app.ticketmaster.com/discovery/v2/events.json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB&size=10&classificationName=music&keyword="+searchInput)
@@ -25,12 +30,26 @@ function getEvents(searchInput) {
 		})
 		.then(function(dataResponse){
 			console.log(dataResponse);
+<<<<<<< HEAD
             console.log(dataResponse._embedded.events[0].id);
             getImgs(dataResponse._embedded.events[0].id);
             getDetails(dataResponse._embedded.events[0].id, dataResponse._embedded.events[2].id, dataResponse._embedded.events[4].id);
 		})
 }
 
+=======
+            var id1 = dataResponse._embedded.events[0].id;
+            var id2 = dataResponse._embedded.events[1].id;
+            var id3 = dataResponse._embedded.events[2].id; 
+
+            getImgs(dataResponse._embedded.events[0].id);
+            setTimeout(getDetails(id1,id2,id3),1000);
+            console.log(id1,id2,id3);
+		})
+}
+
+//This function when called grabs the imgs for the events and places them on the HTML page
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 function getImgs(thing){
     var img1 = document.getElementById('img-1');
     var img2 = document.getElementById('img-2');
@@ -49,6 +68,10 @@ function getImgs(thing){
         .catch(err => console.log('err'))
 }
 
+<<<<<<< HEAD
+=======
+//This function gets the details of events i.e. date and place
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 function getDetails(deets1,deets2,deets3){
     var details1 = document.getElementById('details-1');
     var details2 = document.getElementById('details-2');
@@ -58,12 +81,17 @@ function getDetails(deets1,deets2,deets3){
     var link2 = document.getElementById('link-2');
     var link3 = document.getElementById('link-3');
 
+<<<<<<< HEAD
     Promise.all([
+=======
+    // Promise.all([
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
         fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets1+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
             .then(function(response){
                 return response.json();
             })
             .then(function(data){
+<<<<<<< HEAD
                 console.log('data1',data)
                 link1.href = data.url;
                 details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
@@ -93,6 +121,53 @@ function getDetails(deets1,deets2,deets3){
 
 
 
+=======
+                if(Object.keys(data).indexOf('products') === -1){
+                    console.log('there are no products');
+                    details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate;
+                }
+                else{
+                    console.log('data2',data);
+                    link1.href = data.url;
+                    details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+                }
+
+                fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets2+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
+                    .then(function(response){
+                        return response.json();
+                    })
+                    .then(function(data){
+                        if(Object.keys(data).indexOf('products') === -1){
+                            console.log('there are no products');
+                            details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate;
+                        }
+                        else{
+                            console.log('data2',data);
+                            link2.href = data.url;
+                            details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+                        }
+
+                        fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets3+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
+                            .then(function(response){
+                                return response.json();
+                            })
+                            .then(function(data){
+                                if(Object.keys(data).indexOf('products') === -1){
+                                    console.log('there are no products');
+                                    details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate;
+                                }
+                                else{
+                                    console.log('data2',data);
+                                    link3.href = data.url;
+                                    details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+                                }
+                            })
+                        })
+            })
+    // ])
+}  
+
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 let seatGeekUrl = 'https://api.seatgeek.com/2/events?client_id=Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE&client_secret=e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42';
 
 fetch(seatGeekUrl)
@@ -101,14 +176,21 @@ fetch(seatGeekUrl)
         return response.json()
     })
     .then(data => {
+<<<<<<< HEAD
 // logs data so that i could read throught the documention and how to write to code so that i can 
 // get exactly what i want to display to the user
+=======
+
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
         console.log(data);
 
         let pageNumber = data.meta.page;
         console.log(pageNumber); // 1
         let firstTenEvents = data.events;
+<<<<<<< HEAD
 		// filters through the events to only return concerts 
+=======
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
         let concerts = firstTenEvents.filter(function(event) {
             return event.type === 'concert';
         })
@@ -117,13 +199,19 @@ fetch(seatGeekUrl)
         let topEventTitle        = data.events[0].title;
         let venueNameForTopEvent = firstTenEvents[0].venue.name;
         let topEventLocation     = firstTenEvents[0].venue.display_location;
+<<<<<<< HEAD
 		
         let topEventEl     = document.querySelector('#topEvent');
         let topEventDateEl = document.querySelector('#topEventDate');
+=======
+        let topEventEl     = document.querySelector('#topEvent');
+        let topEventBandEl = document.querySelector('#topEventBand');
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
         let topEventLoc    = document.querySelector('#topEventLoc');
 
         console.log(concerts);
         console.log(topEventTitle);
+<<<<<<< HEAD
         console.log(venueNameForTopEvent)
         console.log(topEventLocation)
         console.log(topEventEl);
@@ -137,6 +225,15 @@ fetch(seatGeekUrl)
     })
     // .catch(err => console.error('err'))
 
+=======
+        console.log(venueNameForTopEvent);
+        console.log(topEventLocation);
+    })
+    .catch(err => console.error('err'))
+
+
+//The rest of the lines until the btn search are for the carousel
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -167,6 +264,10 @@ function showSlides(n) {
 
 }
 
+<<<<<<< HEAD
+=======
+// When the search btn is clicked this function is called and calls the getEvents function
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 btnSearch.addEventListener("click", (e) => {
     var search    = textInput.value.trim();
 

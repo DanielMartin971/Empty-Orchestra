@@ -7,6 +7,46 @@
 
 }
 
+<<<<<<< HEAD
+=======
+@font-face {
+    font-family: 'crotah_free_versionitalic';
+    src: url('../Fonts/CrotahFreeVersionItalic-z8Ev3.ttf') format('woff2'),
+         url('../Fonts/CrotahFreeVersionItalic-z8Ev3.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'rock_show_whiplashregular';
+    src: url('../Fonts/RockShowWhiplash-jV1G.ttf') format('woff2'),
+         url('../Fonts/RockShowWhiplash-jV1G.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'the_frontmanregular';
+    src: url('../Fonts/TheFrontman-j32M.ttf') format('woff2'),
+         url('../Fonts/TheFrontman-j32M.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'metal_maniaregular';
+    src: url('../Fonts/MetalMania-Zwnm.ttf') format('woff2'),
+         url('../Fonts/MetalMania-Zwnm.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 /*
 #036396
 #24B2FF
@@ -20,22 +60,38 @@
     padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+body {
+    background: linear-gradient(to bottom, #048804a1 0%, #490934 100%);
+}
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 
 .navbar{
     position: fixed;
     width: 100%;
+    background: linear-gradient(to bottom, #e7447d 0%, #3299dd 100%);
+    border: groove;
+    border-color: black;
 }
 
 .navbar h2{
+<<<<<<< HEAD
     margin-left: 45%;
     font-size: 50px;
     font-family: 'metal_vengeanceitalic';
+=======
+    margin-right: 30%;
+    font-size: 50px;
+    font-family: 'rock_show_whiplashregular', Helvetica, sans-serif;
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
     font-weight: 500;
     text-decoration: underline;
     text-shadow: 1px 1px 1px black;
 }
 
 .navbar-item {
+<<<<<<< HEAD
     font-family: 'metal_vengeanceitalic';
     text-shadow: 1px 1px 1px black;
 
@@ -49,20 +105,24 @@
     position: absolute;
     right: 0;
     bottom: 0;
+=======
+    font-family: 'metal_maniaregular', Helvetica, sans-serif;
+    text-shadow: 1px 1px 1px black;
+    font-size: 30px;
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 }
 
+nav div .control{
+    display: flex;
+    position: absolute;
+    margin-top: 10px;
+}
 #slider .card-content {
-    max-width: 50%;
+    max-width: 40%;
 }
 
 #slider {
     overflow: hidden;
-}
-
-@media screen and (max-width:1023px) {
-    #slider .card-content {
-        display: none;
-    }
 }
 
 .prev, .next {
@@ -70,20 +130,18 @@
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
+    padding: 0px 16px;
     margin-top: -50px;
-    color: white;
     font-weight: bold;
     font-size: 20px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
 }
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+
 }
 
 .numbertext {
@@ -93,18 +151,86 @@
     position: absolute;
     right: 0;
     top: 0;
-  }
+}
   
-  .item-slide img {
+.item-slide img {
     max-width: 100vw;
-  }
+}
   
-  .caption-container {
+.caption-container {
     color: white;
+<<<<<<< HEAD
   }
+=======
+}
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 
 .topEventContainer {
     border-style: double;
     border: 5px solid blue;
     background-color: lightgrey;
+<<<<<<< HEAD
 }
+=======
+}
+
+h1 {
+    font-family: 'metal_maniaregular', Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+}
+
+h2 {
+    font-family: 'metal_maniaregular', Helvetica, sans-serif; 
+    font-size: 35px;
+}
+
+p {
+    font-family: 'metal_maniaregular', Helvetica, sans-serif; 
+    font-size: 30px;
+}
+
+.card-image {
+    width: 100%;
+    height: 600px;
+    object-fit: scale-down;
+}
+
+/* this allows for the musicains images to all be the same size */
+img {
+    height: 250px;
+    width: 400px;
+    border: 5px inset black;
+}
+
+#starting-tour{
+    background-color: gray;
+    border-top: 6px  inset;
+    border-bottom: 6px  ridge;
+    border-color:black;
+}
+
+.touring{
+    background-color: #f2f2f2;
+    border: 3px inset;
+    border-color:aquamarine
+}
+
+.band-text{
+    border: 3px solid; 
+}
+
+footer {
+    text-align: center;
+    font-size: 15px;
+}
+
+@media screen and (max-width:1023px) {
+    #slider .card-content {
+        display: none;
+    }
+}
+
+>>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
