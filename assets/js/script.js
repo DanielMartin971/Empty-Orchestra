@@ -91,35 +91,6 @@ function getDetails(deets1,deets2,deets3){
     ])
 }  
 
-function showEvents(json) {
-		var items = $('#events .list-group-item');
-		items.hide();
-
-		var events = json._embedded.events;
-		var item = items.first();
-
-		for (var i=0;i<events.length;i++) {
-		  item.children('.list-group-item-heading').text(events[i].name);
-		  item.children('.list-group-item-text').text(events[i].dates.start.localDate);
-		  try {
-			item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
-		  } catch (err) {
-			console.log(err);
-		  }
-		  item.show();
-		  item.off("click");
-		  item.click(events[i], function(eventObject) {
-			console.log(eventObject.data);
-			try {
-			  getAttraction(eventObject.data._embedded.attractions[0].id);
-			} catch (err) {
-			console.log(err);
-			}
-		  });
-		  item=item.next();
-		}
-}
-
 let seatGeekUrl = 'https://api.seatgeek.com/2/events?client_id=Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE&client_secret=e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42';
 
 fetch(seatGeekUrl)
