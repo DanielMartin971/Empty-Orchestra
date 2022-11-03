@@ -7,8 +7,6 @@
 
 }
 
-<<<<<<< HEAD
-=======
 @font-face {
     font-family: 'crotah_free_versionitalic';
     src: url('../Fonts/CrotahFreeVersionItalic-z8Ev3.ttf') format('woff2'),
@@ -46,7 +44,6 @@
 
 }
 
->>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 /*
 #036396
 #24B2FF
@@ -60,12 +57,9 @@
     padding: 0;
 }
 
-<<<<<<< HEAD
-=======
 body {
     background: linear-gradient(to bottom, #048804a1 0%, #490934 100%);
 }
->>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 
 .navbar{
     position: fixed;
@@ -76,40 +70,18 @@ body {
 }
 
 .navbar h2{
-<<<<<<< HEAD
-    margin-left: 45%;
-    font-size: 50px;
-    font-family: 'metal_vengeanceitalic';
-=======
     margin-right: 30%;
     font-size: 50px;
     font-family: 'rock_show_whiplashregular', Helvetica, sans-serif;
->>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
     font-weight: 500;
     text-decoration: underline;
     text-shadow: 1px 1px 1px black;
 }
 
 .navbar-item {
-<<<<<<< HEAD
-    font-family: 'metal_vengeanceitalic';
-    text-shadow: 1px 1px 1px black;
-
-}
-
-.control {
-    margin-top: 15px;
-}
-
-.concert-slide {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-=======
     font-family: 'metal_maniaregular', Helvetica, sans-serif;
     text-shadow: 1px 1px 1px black;
     font-size: 30px;
->>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 }
 
 nav div .control{
@@ -159,19 +131,12 @@ nav div .control{
   
 .caption-container {
     color: white;
-<<<<<<< HEAD
-  }
-=======
 }
->>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
 
 .topEventContainer {
     border-style: double;
     border: 5px solid blue;
     background-color: lightgrey;
-<<<<<<< HEAD
-}
-=======
 }
 
 h1 {
@@ -233,4 +198,3 @@ footer {
     }
 }
 
->>>>>>> e3499a6b1a6341c7db9600c1cbb941ec81a74577
