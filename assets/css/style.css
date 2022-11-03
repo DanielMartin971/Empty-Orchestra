@@ -1,47 +1,19 @@
-@font-face {
-    font-family: 'metal_vengeanceitalic';
-    src: url('../Fonts/Rock-metal2.ttf') format('woff2'),
-         url('../Fonts/Rock-metal2.ttf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'crotah_free_versionitalic';
-    src: url('../Fonts/CrotahFreeVersionItalic-z8Ev3.ttf') format('woff2'),
-         url('../Fonts/CrotahFreeVersionItalic-z8Ev3.ttf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
+/* This allows the use of rock show whiplash font */
 @font-face {
     font-family: 'rock_show_whiplashregular';
     src: url('../Fonts/RockShowWhiplash-jV1G.ttf') format('woff2'),
          url('../Fonts/RockShowWhiplash-jV1G.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
-@font-face {
-    font-family: 'the_frontmanregular';
-    src: url('../Fonts/TheFrontman-j32M.ttf') format('woff2'),
-         url('../Fonts/TheFrontman-j32M.ttf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
+/* This allows the use of metal mania font */
 @font-face {
     font-family: 'metal_maniaregular';
     src: url('../Fonts/MetalMania-Zwnm.ttf') format('woff2'),
          url('../Fonts/MetalMania-Zwnm.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 /*
