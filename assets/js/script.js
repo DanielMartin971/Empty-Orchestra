@@ -14,8 +14,9 @@ var textInput   = document.getElementById("input")
 
 //Client ID: Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE
 //Secret: e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42
-// function searchInput() {
 
+//When this function is called it grabs the events then calls the other functions giving them the IDs for the API and making it
+//easier to search for events and grab details and imgs
 function getEvents(searchInput) {
 	
 	fetch ("https://app.ticketmaster.com/discovery/v2/events.json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB&size=10&classificationName=music&keyword="+searchInput)
@@ -31,6 +32,7 @@ function getEvents(searchInput) {
 		})
 }
 
+//This function when called grabs the imgs for the events and places them on the HTML page
 function getImgs(thing){
     var img1 = document.getElementById('img-1');
     var img2 = document.getElementById('img-2');
@@ -49,6 +51,7 @@ function getImgs(thing){
         .catch(err => console.log('err'))
 }
 
+//This function gets the details of events i.e. date and place
 function getDetails(deets1,deets2,deets3){
     var details1 = document.getElementById('details-1');
     var details2 = document.getElementById('details-2');
@@ -91,35 +94,6 @@ function getDetails(deets1,deets2,deets3){
     ])
 }  
 
-function showEvents(json) {
-		var items = $('#events .list-group-item');
-		items.hide();
-
-		var events = json._embedded.events;
-		var item = items.first();
-
-		for (var i=0;i<events.length;i++) {
-		  item.children('.list-group-item-heading').text(events[i].name);
-		  item.children('.list-group-item-text').text(events[i].dates.start.localDate);
-		  try {
-			item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
-		  } catch (err) {
-			console.log(err);
-		  }
-		  item.show();
-		  item.off("click");
-		  item.click(events[i], function(eventObject) {
-			console.log(eventObject.data);
-			try {
-			  getAttraction(eventObject.data._embedded.attractions[0].id);
-			} catch (err) {
-			console.log(err);
-			}
-		  });
-		  item=item.next();
-		}
-}
-
 let seatGeekUrl = 'https://api.seatgeek.com/2/events?client_id=Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE&client_secret=e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42';
 
 fetch(seatGeekUrl)
@@ -148,18 +122,13 @@ fetch(seatGeekUrl)
 
         console.log(concerts);
         console.log(topEventTitle);
-        console.log(venueNameForTopEvent)
-        console.log(topEventLocation)
-        console.log(topEventEl);
-        console.dir(topEventEl);
-
-
-        topEventEl.innerHTML     = concerts[0].title;
-        topEventBandEl.innerHTML = concerts[0].performers[0].name;
-        topEventLoc.innerHTML    = concerts[0].venue.display_location;
+        console.log(venueNameForTopEvent);
+        console.log(topEventLocation);
     })
-    // .catch(err => console.error('err'))
+    .catch(err => console.error('err'))
 
+
+//The rest of the lines until the btn search are for the carousel
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -190,6 +159,7 @@ function showSlides(n) {
 
 }
 
+// When the search btn is clicked this function is called and calls the getEvents function
 btnSearch.addEventListener("click", (e) => {
     var search    = textInput.value.trim();
 
