@@ -116,6 +116,7 @@ function getDetails(deets1,deets2,deets3){
     // ])
 }  
 
+
 let seatGeekUrl = 'https://api.seatgeek.com/2/events?client_id=Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE&client_secret=e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42';
 
 fetch(seatGeekUrl)
@@ -146,6 +147,11 @@ fetch(seatGeekUrl)
         console.log(topEventTitle);
         console.log(venueNameForTopEvent);
         console.log(topEventLocation);
+        console.dir(topEventEl);
+
+        topEventEl.innerHTML     = concerts[0].title;
+        topEventBandEl.innerHTML = concerts[0].performers[0].name;
+        topEventLoc.innerHTML    = concerts[0].venue.display_location;
     })
     .catch(err => console.error('err'))
 
