@@ -14,6 +14,7 @@ var textInput   = document.getElementById("input")
 
 //Client ID: Mjk5MjEzNTl8MTY2NjY2NTg0MC45NzIwODE
 //Secret: e76fe68a4de01f96cc9edc8e764f2b645e9d7c500bb645e1034614c936924f42
+// function searchInput() {
 
 //When this function is called it grabs the events then calls the other functions giving them the IDs for the API and making it
 //easier to search for events and grab details and imgs
@@ -125,7 +126,6 @@ fetch(seatGeekUrl)
         return response.json()
     })
     .then(data => {
-
         console.log(data);
 
         let pageNumber = data.meta.page;
