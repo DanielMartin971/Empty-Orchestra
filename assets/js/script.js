@@ -58,41 +58,38 @@ function getDetails(deets1,deets2,deets3){
     var link2 = document.getElementById('link-2');
     var link3 = document.getElementById('link-3');
 
-    fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets1+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log('data1',data)
-            link1.href = data.url;
-            details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
-        })
+    Promise.all([
+        fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets1+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log('data1',data)
+                link1.href = data.url;
+                details1.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+            }),
 
-    fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets2+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log('data2',data)
-            link2.href = data.url;
-            details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
-        })
+        fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets2+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log('data2',data)
+                link2.href = data.url;
+                details2.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+            }),
 
-    fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets3+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log('data3',data)
-            link3.href = data.url;
-            details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
-        })
-}
-
-		
-		
-		 
-	  
+        fetch ("https://app.ticketmaster.com/discovery/v2/events/"+deets3+".json?apikey=emwInIksrqTSCb37BcVP8fFHMhvD4RlB")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log('data3',data)
+                link3.href = data.url;
+                details3.textContent = data.name + '! Upcoming concert on ' + data.dates.start.localDate + ' at ' + data.products[0].name + '!';
+            })
+    ])
+}  
 
 function showEvents(json) {
 		var items = $('#events .list-group-item');
@@ -162,16 +159,6 @@ fetch(seatGeekUrl)
         topEventLoc.innerHTML    = concerts[0].venue.display_location;
     })
     // .catch(err => console.error('err'))
-
-const burgerIcon = document.querySelector('#burger');
-const navbarMenu = document.querySelector('#nav-links')
-
-// burgerIcon.addEventListener('click', () => {
-//     navbarMenu.classList.toggle('is-active')
-//     console.log(data);
-// })
-
-
 
 var slideIndex = 1;
 showSlides(slideIndex);
