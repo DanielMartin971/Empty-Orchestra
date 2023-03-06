@@ -16,7 +16,8 @@ We went from scratch. It consisted of doing a lot of research to look up the API
 
 ## Usage
 
-To access the page you use the deployed URL to see the webpage.
+To access the page you use the deployed URL to see the webpage. <br>
+https://danielmartin971.github.io/Empty-Orchestra/
 
 ## Credits
 
