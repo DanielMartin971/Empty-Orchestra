@@ -20,10 +20,10 @@ To access the page you use the deployed URL to see the webpage.
 
 ## Credits
 
-Seatgeek: https://platform.seatgeek.com/
-Ticketmaster: https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
-Adobe Color: https://color.adobe.com/create/color-wheel
-FontAwesome: https://fontawesome.com/icons/skull?s=regular&f=classic
+Seatgeek: https://platform.seatgeek.com/ <br />
+Ticketmaster: https://developer.ticketmaster.com/products-and-docs/apis/getting-started/ <br />
+Adobe Color: https://color.adobe.com/create/color-wheel <br />
+FontAwesome: https://fontawesome.com/icons/skull?s=regular&f=classic <br />
 
 ## License
 
